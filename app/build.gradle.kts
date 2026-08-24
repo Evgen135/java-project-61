@@ -2,6 +2,7 @@ plugins {
     id("java")
     //id("application")
     //id("io.github.ben-manes.versions.settings") version "0.61.0"
+    application
 }
 
 group = "hexlet.code"
@@ -11,9 +12,9 @@ repositories {
     mavenCentral()
 }
 
-//application {
-    //mainClass = "hexlet.code.Main"
-//}
+application {
+    mainClass = "hexlet.code.Main"
+}
 
 dependencies {
     testImplementation(platform("org.junit:junit-bom:6.1.3"))
