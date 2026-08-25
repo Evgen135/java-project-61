@@ -1,8 +1,9 @@
 plugins {
-    id("java")
-    //id("application")
+    //id("java")
+    id("application")
     //id("io.github.ben-manes.versions.settings") version "0.61.0"
     application
+    kotlin("jvm")
 }
 
 group = "hexlet.code"
@@ -20,8 +21,13 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:6.1.3"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
 }
