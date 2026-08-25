@@ -28,6 +28,6 @@ tasks.test {
     useJUnitPlatform()
 }
 
-tasks.getByName("run", JavaExec::class) {
+tasks.named<JavaExec>("run") {
     standardInput = System.`in`
 }
