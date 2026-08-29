@@ -2,13 +2,14 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 public class Engine {
     private static final int MAX_WIN=3;
 
-    public static void enjine(int numGame, String name) {
+    public static void engine(int numGame, String name) {
         int countWin = 0;
-        int rndInt;
+        String rndInt;
         String corAnsw;
 
         if (numGame==2){
@@ -19,16 +20,28 @@ public class Engine {
             System.out.println("What is the result of the expression?");
         }
 
+        if(numGame==4) {
+            System.out.println("Find the greatest common divisor of given numbers.");
+        }
+
             while(countWin<MAX_WIN) {
                 if (numGame==2) {
-                    System.out.println("Question: " + Even.rndInt());
+                    rndInt=Integer.toString(Even.rndInt());
                     corAnsw = Even.startEven();
                 }
-                if (numGame==3){
-                    System.out.println("Question: " + Calc.rndInts());
+                else if (numGame==3){
+                    rndInt=Calc.rndInts();
                     corAnsw = Calc.startCalc();
-                } else{corAnsw=" ";}
+                }
+                else if (numGame==4){
+                    rndInt=GCD.rndInts();
+                    corAnsw = GCD.startCalc();
+                } else {
+                    corAnsw="";
+                    rndInt="";
+                }
 
+                System.out.println("Question: " + rndInt);
                 String anwser = Main.input.next();
 
                 if (anwser.equals(corAnsw)) {

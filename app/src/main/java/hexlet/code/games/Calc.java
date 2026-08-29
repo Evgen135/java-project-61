@@ -11,6 +11,10 @@ public class Calc {
         num1=(int) (Math.random() * RNGE_NUM);
         num2=(int) (Math.random() * RNGE_NUM);
         operator = OPERATORS[(int) (Math.random() * (OPERATORS.length)) ];
+        if (operator=='*'){
+            num1=num1%100;
+            num2=num2%100;
+        }
         return num1 + " " + operator + " " + num2;
     }
 

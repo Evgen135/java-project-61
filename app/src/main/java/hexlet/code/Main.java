@@ -1,8 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +11,13 @@ public class Main {
         // приветствие и выбор игры
         do {
             System.out.println(
-                    "Please enter the game number and press Enter.\n1 - Greet\n2 - Even\n3 - Calc\n0 - Exit");
+                    """
+                            Please enter the game number and press Enter.
+                            1 - Greet
+                            2 - Even
+                            3 - Calc
+                            4 - GCD
+                            0 - Exit""");
             numGame = input.nextInt();
         } while (numGame<0 || numGame>MENU_GAME.length);
 
@@ -23,6 +26,6 @@ public class Main {
         Cli.hello_user(input);
         String nameGamer = Cli.nameGamer;
         //игры
-        Engine.enjine(numGame, nameGamer);
+        Engine.engine(numGame, nameGamer);
     }
 }
