@@ -11,8 +11,4 @@ public class Cli {
         System.out.println("Hello, " + nameGamer + "!");
     }
 
-    //    public static void shoiceGame(){
-    //
-    //    }
-
 }
