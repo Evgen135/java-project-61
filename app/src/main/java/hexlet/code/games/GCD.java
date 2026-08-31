@@ -14,7 +14,7 @@ public class GCD {
         return numA + " " + numB;
     }
 
-    public static String startCalc() {
+    public static String startGCD() {
         while(numB>0) {
             int hun=numB;
             numB = numA % numB;
