@@ -10,7 +10,7 @@ public class Engine {
         String rndInt;
         String corAnsw;
 
-        switch (numGame) {
+        switch (numGame) {      //привила игр
             case 2:
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             case 3:
@@ -19,6 +19,8 @@ public class Engine {
             System.out.println("Find the greatest common divisor of given numbers.");
             case 5 :
             System.out.println("What number is missing in the progression?");
+            case 6 :
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         }
 
 
@@ -38,7 +40,11 @@ public class Engine {
                 else if (numGame==5){
                     rndInt=Progression.rndInts();
                     corAnsw = Progression.startProgres();
-                } else {
+                }
+                else if (numGame==6){
+                    rndInt= Integer.toString(Prime.rndInts());
+                    corAnsw = Prime.startPrime();
+                }else {
                     corAnsw="";
                     rndInt="";
                 }

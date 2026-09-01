@@ -2,8 +2,8 @@
 
 
     public class Even {
-        private static final int RNGE_NUM=120;       // максимальное число для игры
-        private static  int examInt;
+        private static final int RNGE_NUM=120;      // максимальное число для игры
+        private static  int examInt;        //проверяемое число
 
         public static int rndInt() {
             examInt= (int) (Math.random() * RNGE_NUM);        //загаданное число
