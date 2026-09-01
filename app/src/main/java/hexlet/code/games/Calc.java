@@ -5,7 +5,7 @@ public class Calc {
     private static final char[] OPERATORS={'+','-','*'};
     private static int num1;
     private static int num2;
-    private static char operator;
+    private static char operator;       //выбираемый оператор для вычисления
 
     public static String rndInts() {
         num1=(int) (Math.random() * RNGE_NUM);
@@ -15,7 +15,7 @@ public class Calc {
             num1=num1%100;
             num2=num2%100;
         }
-        return num1 + " " + operator + " " + num2;
+        return num1 + " " + operator + " " + num2;      //текстовый вид примера
     }
 
     public static String startCalc() {
@@ -33,6 +33,6 @@ public class Calc {
                 break;
 
         }
-        return Integer.toString(corAnsw);
+        return Integer.toString(corAnsw);       //решение примера
     }
 }
