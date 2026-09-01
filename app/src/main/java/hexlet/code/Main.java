@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Main {
-    public static final String[] MENU_GAME={"Exit","Greet","Even","Calc","Progression","Prime"};//список игр
+    public static final String[] MENU_GAME={"Exit","Greet","Even","Calc","GCD","Progression","Prime"};//список игр
     public static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
 
@@ -18,10 +18,9 @@ public class Main {
                             5 - Progression
                             6 - Prime
                             0 - Exit""");
+            System.out.print("Your choice: ");
             numGame = input.nextInt();
         } while (numGame<0 || numGame>MENU_GAME.length);    //повтор выбора в случае не верного ввода
-
-        System.out.println("Your choice: " + numGame);
 
         Cli.hello_user(input);      // приветсвие
         String nameGamer = Cli.nameGamer;       //запрос имени
