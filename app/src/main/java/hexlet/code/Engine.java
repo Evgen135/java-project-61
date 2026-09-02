@@ -1,73 +1,39 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import java.util.Scanner;
 
 public class Engine {
     private static final int MAX_WIN=3;
 
-    public static void engine(int numGame, String name) {
-        int countWin = 0;
-        String rndInt;
-        String corAnsw;
+    public static void engine(Scanner answer, String description, String[][] rounds) {
 
-        switch (numGame) {      //привила игр
-            case 2:
-            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-            case 3:
-            System.out.println("What is the result of the expression?");
-            case 4 :
-            System.out.println("Find the greatest common divisor of given numbers.");
-            case 5 :
-            System.out.println("What number is missing in the progression?");
-            case 6 :
-                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        }
+        System.out.print("Welcome to the Brain Games!\nMay I have your name?");
+        String name = answer.next();
+        System.out.println("Hello, " + name + "!\n"+description);
 
+        for(String[] round : rounds) {
 
-            while(countWin<MAX_WIN) {
-                if (numGame==2) {
-                    rndInt=Integer.toString(Even.rndInt());
-                    corAnsw = Even.startEven();
-                }
-                else if (numGame==3){
-                    rndInt=Calc.rndInts();
-                    corAnsw = Calc.startCalc();
-                }
-                else if (numGame==4){
-                    rndInt=GCD.rndInts();
-                    corAnsw = GCD.startGCD();
-                }
-                else if (numGame==5){
-                    rndInt=Progression.rndInts();
-                    corAnsw = Progression.startProgres();
-                }
-                else if (numGame==6){
-                    rndInt= Integer.toString(Prime.rndInts());
-                    corAnsw = Prime.startPrime();
-                }else {
-                    corAnsw="";
-                    rndInt="";
-                }
+            String question = round[0];
+            String corAnsw = round[1];
 
-                System.out.println("Question: " + rndInt);
-                String answer = Main.input.next();
+            System.out.println("Question: " + question);
+            System.out.print("Your answer: ");
+            String uaserAnswer = answer.next();
 
-                if (answer.equals(corAnsw)) {
-                    System.out.println("Correct!");
-                    countWin++;
+            if (uaserAnswer.equals(corAnsw)) {
+                System.out.println("Correct!");
 
-                } else {
-                    System.out.println(
-                            answer + " is wrong answer ;(. Correct answer was "
-                                    + corAnsw
-                                    + ".\nLet's try again, "
-                                    + name
-                                    + "!");
-                    return;
-                }
+            } else {
+                System.out.println(
+                        uaserAnswer + " is wrong answer ;(. Correct answer was "
+                                + corAnsw
+                                + ".\nLet's try again, "
+                                + name
+                                + "!");
+                return;
             }
-            System.out.println("Congratulations, " + name+ "!");
+        }
+        System.out.println("Congratulations,"+ name + "!");
     }
-
 }
 
