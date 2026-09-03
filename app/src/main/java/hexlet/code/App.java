@@ -1,16 +1,19 @@
 package hexlet.code;
+
 import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class App {
-    private static final String[] MENU_GAME={"Exit","Greet","Even","Calc","GCD","Progression","Prime"};//список игр
-
+    private static final String[] MENU_GAME = {
+        "Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"
+    }; // список игр
 
     public static void main(String[] args) {
-        int numGame;        // выбор игры
+        int numGame; // выбор игры
         Scanner input = new Scanner(System.in);
 
-        System.out.println("""
+        System.out.println(
+                """
                         Please enter the game number and press Enter.
                         1 - Greet
                         2 - Even
@@ -24,29 +27,28 @@ public class App {
         numGame = input.nextInt();
         System.out.println();
 
-        switch (numGame){
+        switch (numGame) {
             case 1:
                 Cli.hello_user(input);
                 break;
-            //игры
+            // игры
             case 2:
-                Even.startEven(input);
+                Even.startEven();
                 break;
             case 3:
-                Calc.startCalc(input);
+                Calc.startCalc();
                 break;
             case 4:
-                GCD.startGCD(input);
+                GCD.startGCD();
                 break;
             case 5:
-                Progression.startProgression(input);
+                Progression.startProgression();
                 break;
             case 6:
-                Prime.startPrime(input);
+                Prime.startPrime();
                 break;
             default:
                 System.out.print("Exit");
         }
-
     }
 }

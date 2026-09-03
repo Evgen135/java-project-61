@@ -10,5 +10,4 @@ public class Cli {
         System.out.println("Hello, " + nameGamer + "!");
         scanner.close();
     }
-
 }
