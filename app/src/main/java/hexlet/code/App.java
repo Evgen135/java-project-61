@@ -4,9 +4,6 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class App {
-    private static final String[] MENU_GAME = {
-        "Exit", "Greet", "Even", "Calc", "GCD", "Progression", "Prime"
-    }; // список игр
 
     public static void main(String[] args) {
         int numGame; // выбор игры
@@ -47,8 +44,10 @@ public class App {
             case 6:
                 Prime.startPrime();
                 break;
-            default:
+            case 0:
                 System.out.print("Exit");
+            default:
+                throw new RuntimeException("Unknown operator " + numGame);
         }
     }
 }

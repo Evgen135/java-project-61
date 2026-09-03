@@ -4,12 +4,11 @@ import hexlet.code.Engine;
 
 public class GCD {
     private static final int RNGE_NUM = 15; // максимальное число для общего делителя
-    private static final int ROUNDS = 3;
 
     public static void startGCD() {
         String description = "Find the greatest common divisor of given numbers.";
-        String[][] rounds = new String[ROUNDS][2];
-        for (int i = 0; i < ROUNDS; i++) {
+        String[][] rounds = new String[Engine.ROUNDS][2];
+        for (int i = 0; i < Engine.ROUNDS; i++) {
 
             int divider = (int) (Math.random() * RNGE_NUM); // 1 чтоб небло =0
             int numA = ((int) (Math.random() * RNGE_NUM) + 1) * divider;

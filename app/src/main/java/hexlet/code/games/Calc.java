@@ -4,14 +4,13 @@ import hexlet.code.Engine;
 
 public class Calc {
     private static final int RNGE_NUM = 350; // максимальное число  для игры
-    private static final int ROUNDS = 3;
     private static final char[] OPERATORS = {'+', '-', '*'}; // выбираемый оператор для вычисления
 
     public static void startCalc() {
         String description = "What is the result of the expression?";
-        String[][] rounds = new String[ROUNDS][2];
+        String[][] rounds = new String[Engine.ROUNDS][2];
 
-        for (int i = 0; i < ROUNDS; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
 
             int num1 = (int) (Math.random() * RNGE_NUM);
             int num2 = (int) (Math.random() * RNGE_NUM);

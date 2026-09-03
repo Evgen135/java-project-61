@@ -8,9 +8,9 @@ public class Prime {
 
     public static void startPrime() {
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] rounds = new String[ROUNDS][2];
+        String[][] rounds = new String[Engine.ROUNDS][2];
 
-        for (int i = 0; i < ROUNDS; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             int examNum = (int) (Math.random() * RNGE_NUM); // загаданное число
 
             rounds[i][0] = Integer.toString(examNum);
