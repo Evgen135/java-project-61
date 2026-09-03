@@ -47,7 +47,7 @@ public class App {
             case 0:
                 System.out.print("Exit");
             default:
-                throw new Error("Game number unknown: " + numGame);
+                throw new RuntimeException("Game number unknown: " + numGame);
         }
     }
 }
