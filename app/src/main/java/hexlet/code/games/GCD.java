@@ -16,11 +16,11 @@ public class GCD {
 
             rounds[i][0] = numA + " " + numB;
 
-            rounds[i][1] = Integer.toString(corAnsw(numA, numB));
+            rounds[i][1] = Integer.toString(gcd(numA, numB));
         }
         Engine.engine(description, rounds);
     }
-    public static int corAnsw(int numA,int numB){
+    public static int gcd(int numA,int numB){
             while (numB != 0) {
                 int hun = numB;
                 numB = numA % numB;

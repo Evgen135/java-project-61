@@ -20,13 +20,13 @@ public class Calc {
                 num2 = num2 % 100;
             }
 
-            rounds[i][1] = Integer.toString(corAnsw(num1,num2,operator)); // ответ
+            rounds[i][1] = Integer.toString(calculate(num1,num2,operator)); // ответ
             rounds[i][0] = num1 + " " + operator + " " + num2;
         }
         Engine.engine(description, rounds); // решение примера
     }
 
-    public static int corAnsw(int num1, int num2, int operator){
+    public static int calculate(int num1, int num2, int operator){
         switch (operator) {
             case '+':
                 return num1 + num2;

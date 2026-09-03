@@ -13,25 +13,26 @@ public class Progression {
         String[][] rounds = new String[Engine.ROUNDS][2];
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
-            int length = (int) ((Math.random() * (MIN_LENGTH + 1)) + MIN_LENGTH);
-            String[] numbersRow = new String[length]; // список номеров
-            int num = (int) (Math.random() * MAX_NUM); // текущий номер
-            int move = (int) (Math.random() * MOVE_MAX) + 1; // размер шага
-            int numHidden = (int) (Math.random() * length); // кол-во номеров
 
-            for (int l = 0; l < length; l++) {
-                if (l!=numHidden) {
-                    numbersRow[l] = Integer.toString(num);
-                    num += move;
-                } else {
-                    numbersRow[l] = "..";
-                    rounds[i][1] =  Integer.toString(num); //ответ
-                    num += move;
-                }
-            }
-            rounds[i][0] = String.join(" ", numbersRow);
+            int length = (int) ((Math.random() * (MIN_LENGTH + 1)) + MIN_LENGTH);
+            int numHidden = (int) (Math.random() * length); // кол-во номеров
+            String[] progression = progression(length); // список номеров
+            rounds[i][1] =  progression[numHidden]; //ответ
+            progression [numHidden] = "..";
+            rounds[i][0] = String.join(" ", progression);
         }
         Engine.engine(description, rounds);
     }
 
+    public static String[] progression (int length) {
+        int num = (int) (Math.random() * MAX_NUM); // текущий номер
+        int move = (int) (Math.random() * MOVE_MAX) + 1; // размер шага
+
+        String[] progression  = new String[length];
+        for (int i = 0; i < length; i++) {
+            progression [i] = Integer.toString(num);
+            num += move;
+        }
+        return progression;
+    }
 }
