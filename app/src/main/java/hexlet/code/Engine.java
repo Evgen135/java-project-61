@@ -13,20 +13,20 @@ public class Engine {
         for (String[] round : rounds) {
 
             String question = round[0];
-            String corAnsw = round[1];
+            String correctAnswer = round[1];
 
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
-            String uaserAnswer = answer.next();
+            String userAnswer = answer.next();
 
-            if (uaserAnswer.equals(corAnsw)) {
+            if (userAnswer.equals(correctAnswer)) {
                 System.out.println("Correct!");
 
             } else {
                 System.out.println(
-                        uaserAnswer
+                        userAnswer
                                 + " is wrong answer ;(. Correct answer was "
-                                + corAnsw
+                                + correctAnswer
                                 + ".\nLet's try again, "
                                 + name
                                 + "!");

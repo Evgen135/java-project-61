@@ -3,16 +3,16 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class GCD {
-    private static final int RNGE_NUM = 15; // максимальное число для общего делителя
+    private static final int MAX_NUM_GAME = 15; // максимальное число для общего делителя
 
     public static void startGCD() {
         String description = "Find the greatest common divisor of given numbers.";
         String[][] rounds = new String[Engine.ROUNDS][2];
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
-            int divider = (int) (Math.random() * RNGE_NUM); // 1 чтоб небло =0
-            int numA = ((int) (Math.random() * RNGE_NUM) + 1) * divider;
-            int numB = ((int) (Math.random() * RNGE_NUM) + 1) * divider;
+            int divider = (int) (Math.random() * MAX_NUM_GAME);
+            int numA = ((int) (Math.random() * MAX_NUM_GAME) + 1) * divider;
+            int numB = ((int) (Math.random() * MAX_NUM_GAME) + 1) * divider;
 
             rounds[i][0] = numA + " " + numB;
 

@@ -2,9 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.Arrays;
+
 public class Calc {
-    private static final int RNGE_NUM = 350; // максимальное число  для игры
-    private static final char[] OPERATORS = {'+', '-', '*'}; // выбираемый оператор для вычисления
+    private static final int MAX_NUM_GAME = 350;
+    private static final char[] OPERATORS = {'+', '-', '*'};
 
     public static void startCalc() {
         String description = "What is the result of the expression?";
@@ -12,8 +14,8 @@ public class Calc {
 
         for (int i = 0; i < Engine.ROUNDS; i++) {
 
-            int num1 = (int) (Math.random() * RNGE_NUM);
-            int num2 = (int) (Math.random() * RNGE_NUM);
+            int num1 = (int) (Math.random() * MAX_NUM_GAME);
+            int num2 = (int) (Math.random() * MAX_NUM_GAME);
             char operator = OPERATORS[(int) (Math.random() * (OPERATORS.length))];
             if (operator == '*') {
                 num1 = num1 % 100;
@@ -32,8 +34,11 @@ public class Calc {
                 return num1 + num2;
             case '-':
                 return num1 - num2;
-            default:
+            case '*':
                 return num1 * num2;
+            default :
+                throw new RuntimeException("The selected value " + operator + " is not included in the list of operators: "
+                        + Arrays.toString(OPERATORS));
         }
     }
 }
